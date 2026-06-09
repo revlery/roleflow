@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# roleflow
 
-## Getting Started
+> Open source agentic job search platform with a human-in-the-loop interface.
 
-First, run the development server:
+Roleflow is the missing layer between job seekers and AI agents. Use it as a clean kanban-style job tracker, or as infrastructure that AI agents can build on top of — locally or cloud-hosted, with any LLM.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**[Read the full product vision →](VISION.md)**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## What it does
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Track job applications through a structured pipeline: Wishlist → Applied → Recruiter Contact → Interview → Offer
+- Find recruiter emails via Gmail OAuth (metadata scope only — we never read your email body)
+- Draft outreach emails via agent — you always review before sending
+- Schedule interviews via Google Calendar integration
+- Expose a REST API for AI agents to plug into
 
-## Learn More
+## Why open source
 
-To learn more about Next.js, take a look at the following resources:
+Being open source isn't just a distribution strategy — it's the core trust mechanism. You can audit exactly what Roleflow does with your Gmail access. The recruiter classifier is inspectable. The API is transparent.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Stack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Frontend: React
+- Backend: Node.js / Express
+- Auth: Gmail OAuth (`gmail.metadata` + `gmail.compose` scopes only)
+- Local or cloud deployment
 
-## Deploy on Vercel
+## Privacy model
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Minimal OAuth scopes — metadata only for recruiter detection, compose only for drafts
+- Local deployment option — nothing leaves your machine
+- We extract recruiter contact info and discard the rest
+- Every agent action requires human review before execution
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Roadmap
+
+- [ ] Kanban job tracker
+- [ ] Gmail OAuth + recruiter email detection
+- [ ] Google Calendar interview scheduling
+- [ ] Agent REST API
+- [ ] Local LLM support via Ollama
+- [ ] Community recruiter classifier
+
+## Author
+
+Larry Cao · [github.com/revlery](https://github.com/revlery)
+
+---
+
+*Roleflow is early. Star the repo to follow along.*
