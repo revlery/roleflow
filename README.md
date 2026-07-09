@@ -22,10 +22,24 @@ Being open source isn't just a distribution strategy — it's the core trust mec
 
 ## Stack
 
-- Frontend: React
+- Frontend: React (Next.js)
 - Backend: Node.js / Express
+- Package manager: [Bun](https://bun.sh)
 - Auth: Gmail OAuth (`gmail.metadata` + `gmail.compose` scopes only)
 - Local or cloud deployment
+
+## Getting Started
+
+```bash
+git clone https://github.com/revlery/roleflow.git
+cd roleflow
+bun install
+bun run dev
+```
+
+App runs at [http://localhost:3000](http://localhost:3000).
+
+> This project uses Bun as its package manager — `bun.lock` is the source of truth for dependency versions. If you have `npm` installed instead, `npm install && npm run dev` also works, but please don't commit a `package-lock.json`.
 
 ## Privacy model
 
