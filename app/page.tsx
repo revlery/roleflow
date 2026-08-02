@@ -65,11 +65,13 @@ export default function Home() {
           return (
             <div
               key={status}
-              className="flex-1 bg-surface-raised rounded-lg shadow p-4 min-w-0"
+              className="flex-1 bg-surface-raised rounded-lg shadow p-4 min-w-0 @container"
             >
-              <div className="flex justify-between items-center mb-4">
-                <h2 className="font-semibold text-text-secondary">{status}</h2>
-                <span className="text-xs text-text-muted">
+              <div className="flex justify-between items-center gap-2 mb-4">
+                <h2 className="font-semibold text-text-secondary truncate min-w-0">
+                  {status}
+                </h2>
+                <span className="hidden @[140px]:inline shrink-0 text-xs text-text-muted">
                   {columnJobs.length}
                 </span>
               </div>
