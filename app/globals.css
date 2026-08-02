@@ -3,6 +3,31 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Surfaces */
+  --surface-page: #f9fafb;     /* main page bg (was bg-gray-50) */
+  --surface-raised: #ffffff;   /* cards, columns, modal (was bg-white) */
+  --surface-sunken: #f9fafb;   /* job card bg (was bg-gray-50) */
+  --surface-hover: #f3f4f6;    /* hover bg for buttons (was hover:bg-gray-100) */
+
+  /* Text */
+  --text-primary: #111827;     /* was text-gray-900 */
+  --text-secondary: #374151;   /* was text-gray-700 */
+  --text-tertiary: #6b7280;    /* was text-gray-500 / 600 */
+  --text-muted: #9ca3af;       /* was text-gray-400 */
+  --text-faint: #d1d5db;       /* was text-gray-300 */
+  --text-on-accent: #ffffff;   /* text on the primary "Add" button */
+
+  /* Borders */
+  --border-default: #e5e7eb;   /* was border-gray-200 */
+  --border-input: #d1d5db;     /* was border-gray-300 */
+
+  /* Accents */
+  --accent-link: #3b82f6;      /* was text-blue-500 */
+  --accent-danger: #ef4444;    /* was hover:text-red-500 */
+  --accent-primary: #111827;   /* was bg-gray-900 (Add button) */
+  --accent-primary-hover: #374151; /* was hover:bg-gray-700 */
+  --ring-focus: #60a5fa;       /* was focus:ring-blue-400 */
 }
 
 @theme inline {
@@ -10,12 +35,54 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --color-surface-page: var(--surface-page);
+  --color-surface-raised: var(--surface-raised);
+  --color-surface-sunken: var(--surface-sunken);
+  --color-surface-hover: var(--surface-hover);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+  --color-text-muted: var(--text-muted);
+  --color-text-faint: var(--text-faint);
+  --color-text-on-accent: var(--text-on-accent);
+
+  --color-border-default: var(--border-default);
+  --color-border-input: var(--border-input);
+
+  --color-accent-link: var(--accent-link);
+  --color-accent-danger: var(--accent-danger);
+  --color-accent-primary: var(--accent-primary);
+  --color-accent-primary-hover: var(--accent-primary-hover);
+  --color-ring-focus: var(--ring-focus);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+
+    --surface-page: #0a0a0a;
+    --surface-raised: #262626;   /* neutral-800 */
+    --surface-sunken: #262626;   /* neutral-800 */
+    --surface-hover: #404040;    /* neutral-700 */
+
+    --text-primary: #f3f4f6;
+    --text-secondary: #d1d5db;
+    --text-tertiary: #9ca3af;
+    --text-muted: #6b7280;
+    --text-faint: #525252;
+    --text-on-accent: #111827;
+
+    --border-default: #404040;   /* neutral-700 */
+    --border-input: #525252;     /* neutral-600 */
+
+    --accent-link: #60a5fa;
+    --accent-danger: #f87171;
+    --accent-primary: #f3f4f6;
+    --accent-primary-hover: #d1d5db;
+    --ring-focus: #60a5fa;
   }
 }
 

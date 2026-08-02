@@ -42,10 +42,10 @@ export default function AddJobModal({
       onClick={onClose}
     >
       <div
-        className="bg-white rounded-lg shadow-xl p-6 w-full max-w-sm"
+        className="bg-surface-raised rounded-lg shadow-xl p-6 w-full max-w-sm"
         onClick={(e) => e.stopPropagation()}
       >
-        <h3 className="font-semibold text-gray-800 mb-4">
+        <h3 className="font-semibold text-text-primary mb-4">
           Add job to {defaultStatus}
         </h3>
         <form onSubmit={handleSubmit} className="flex flex-col gap-3">
@@ -55,40 +55,40 @@ export default function AddJobModal({
             placeholder="Company"
             value={company}
             onChange={(e) => setCompany(e.target.value)}
-            className="border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="border border-border-input bg-surface-raised text-text-primary placeholder:text-text-muted rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring-focus"
           />
           <input
             type="text"
             placeholder="Role"
             value={role}
             onChange={(e) => setRole(e.target.value)}
-            className="border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="border border-border-input bg-surface-raised text-text-primary placeholder:text-text-muted rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring-focus"
           />
           <input
             type="url"
             placeholder="Job posting link (optional)"
             value={link}
             onChange={(e) => setLink(e.target.value)}
-            className="border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="border border-border-input bg-surface-raised text-text-primary placeholder:text-text-muted rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring-focus"
           />
           <textarea
             placeholder="Notes (optional)"
             value={notes}
             onChange={(e) => setNotes(e.target.value)}
             rows={2}
-            className="border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 resize-none"
+            className="border border-border-input bg-surface-raised text-text-primary placeholder:text-text-muted rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring-focus resize-none"
           />
           <div className="flex justify-end gap-2 mt-2">
             <button
               type="button"
               onClick={onClose}
-              className="px-3 py-1.5 text-sm text-gray-500 hover:text-gray-700"
+              className="px-3 py-1.5 text-sm text-text-tertiary hover:text-text-secondary"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="px-3 py-1.5 text-sm bg-gray-900 text-white rounded hover:bg-gray-700"
+              className="px-3 py-1.5 text-sm bg-accent-primary text-text-on-accent rounded hover:bg-accent-primary-hover"
             >
               Add
             </button>

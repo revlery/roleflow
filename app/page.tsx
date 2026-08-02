@@ -51,10 +51,10 @@ export default function Home() {
   };
 
   return (
-    <main className="flex-1 bg-gray-50">
+    <main className="flex-1 bg-surface-page">
       <header className="px-8 pt-8 pb-4">
-        <h1 className="text-xl font-semibold text-gray-900">Roleflow</h1>
-        <p className="text-sm text-gray-500">
+        <h1 className="text-xl font-semibold text-text-primary">Roleflow</h1>
+        <p className="text-sm text-text-tertiary">
           {jobs.length} job{jobs.length === 1 ? "" : "s"} tracked
         </p>
       </header>
@@ -65,17 +65,17 @@ export default function Home() {
           return (
             <div
               key={status}
-              className="flex-1 bg-white rounded-lg shadow p-4 min-w-0"
+              className="flex-1 bg-surface-raised rounded-lg shadow p-4 min-w-0"
             >
               <div className="flex justify-between items-center mb-4">
-                <h2 className="font-semibold text-gray-700">{status}</h2>
-                <span className="text-xs text-gray-400">
+                <h2 className="font-semibold text-text-secondary">{status}</h2>
+                <span className="text-xs text-text-muted">
                   {columnJobs.length}
                 </span>
               </div>
 
               {columnJobs.length === 0 && (
-                <div className="text-sm text-gray-400 mb-3">No cards yet</div>
+                <div className="text-sm text-text-muted mb-3">No cards yet</div>
               )}
 
               {columnJobs.map((job) => (
@@ -89,7 +89,7 @@ export default function Home() {
 
               <button
                 onClick={() => setModalStatus(status)}
-                className="w-full text-sm text-gray-400 hover:text-gray-700 border border-dashed border-gray-300 rounded-md py-2 mt-1 hover:border-gray-400 transition-colors"
+                className="w-full text-sm text-text-muted hover:text-text-secondary border border-dashed border-border-input rounded-md py-2 mt-1 hover:border-text-muted transition-colors"
               >
                 + Add job
               </button>
