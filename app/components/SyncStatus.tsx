@@ -129,7 +129,7 @@ export default function SyncStatus() {
     <div ref={containerRef} className="relative z-50">
       <div className="flex items-center gap-2">
         <span
-          className={`flex items-center gap-1.5 text-sm font-medium ${
+          className={`flex items-center gap-1.5 text-xs font-medium ${
             syncState === "synced" ? "text-text-primary" : "text-text-tertiary"
           }`}
         >
