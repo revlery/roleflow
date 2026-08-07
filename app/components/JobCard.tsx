@@ -23,7 +23,7 @@ export default function JobCard({ job, onMove, onDelete }: JobCardProps) {
         <button
           onClick={() => onDelete(job.id)}
           aria-label="Delete job"
-          className="hidden @[180px]:block text-text-faint hover:text-accent-danger text-sm leading-none shrink-0"
+          className="hidden @[140px]:block text-text-faint hover:text-accent-danger text-sm leading-none shrink-0"
         >
           ✕
         </button>
@@ -48,7 +48,7 @@ export default function JobCard({ job, onMove, onDelete }: JobCardProps) {
         <span className="text-[11px] text-text-muted">
           {new Date(job.dateAdded).toLocaleDateString()}
         </span>
-        <div className="hidden @[220px]:flex gap-1">
+        <div className="hidden @[160px]:flex gap-1">
           <button
             onClick={() => onMove(job.id, "prev")}
             disabled={!canMoveBack}
