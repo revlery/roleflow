@@ -14,7 +14,7 @@ export default function JobCard({ job, onMove, onDelete }: JobCardProps) {
   const canMoveForward = statusIndex < STATUSES.length - 1;
 
   return (
-    <div className="bg-surface-sunken border border-border-default rounded-md p-3 mb-3 shadow-sm hover:shadow transition-shadow">
+    <div className="bg-surface-sunken border border-border-default rounded-md p-3 mb-3 shadow-sm hover:shadow transition-shadow @container">
       <div className="flex justify-between items-start gap-2">
         <div className="min-w-0">
           <p className="font-medium text-text-primary truncate">{job.company}</p>
@@ -23,7 +23,7 @@ export default function JobCard({ job, onMove, onDelete }: JobCardProps) {
         <button
           onClick={() => onDelete(job.id)}
           aria-label="Delete job"
-          className="text-text-faint hover:text-accent-danger text-sm leading-none shrink-0"
+          className="hidden @[180px]:block text-text-faint hover:text-accent-danger text-sm leading-none shrink-0"
         >
           ✕
         </button>
@@ -48,7 +48,7 @@ export default function JobCard({ job, onMove, onDelete }: JobCardProps) {
         <span className="text-[11px] text-text-muted">
           {new Date(job.dateAdded).toLocaleDateString()}
         </span>
-        <div className="flex gap-1">
+        <div className="hidden @[220px]:flex gap-1">
           <button
             onClick={() => onMove(job.id, "prev")}
             disabled={!canMoveBack}
