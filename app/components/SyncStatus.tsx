@@ -49,6 +49,7 @@ export default function SyncStatus() {
       localStorage.setItem("roleflow_sync_code", data.syncCode);
       setGeneratedCode(data.syncCode);
       setSyncState("synced");
+      window.dispatchEvent(new Event("roleflow:sync-changed"));
     } catch (err) {
       setError("Couldn't generate a sync code. Try again.");
       setSyncState("not-synced");
@@ -78,6 +79,7 @@ export default function SyncStatus() {
       setSyncState("synced");
       setView("menu");
       setInputCode("");
+      window.dispatchEvent(new Event("roleflow:sync-changed"));
     } catch (err) {
       setError("Something went wrong. Try again.");
       setSyncState("not-synced");
@@ -90,6 +92,7 @@ export default function SyncStatus() {
     setSyncState("not-synced");
     setGeneratedCode(null);
     setView("menu");
+    window.dispatchEvent(new Event("roleflow:sync-changed"));
   }
 
   function connectGoogle() {
