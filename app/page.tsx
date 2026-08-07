@@ -5,7 +5,6 @@ import { Job, JobStatus, STATUSES } from "./types";
 import JobCard from "./components/JobCard";
 import AddJobModal from "./components/AddJobModal";
 import Header from "./components/Header";
-import SyncStatus from "./components/SyncStatus";
 
 const STORAGE_KEY = "roleflow.jobs";
 
@@ -52,6 +51,16 @@ export default function Home() {
       })
     );
   };
+
+  if (!loaded) {
+    return (
+      <main className="flex-1 bg-surface-page">
+        <header className="px-8 pt-8 pb-4">
+          <h1 className="text-xl font-semibold text-text-primary">Roleflow</h1>
+        </header>
+      </main>
+      );
+  }
 
   return (
     <main className="flex-1 bg-surface-page">
