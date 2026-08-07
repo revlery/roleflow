@@ -1,7 +1,6 @@
 "use client";
 
 import SyncStatus from "./SyncStatus";
-import SettingsIcon from "./icons/SettingsIcon";
 
 import { Job } from "../types";
 
@@ -21,14 +20,7 @@ export default function Header({ jobs, synced, onSettingsClick }: HeaderProps) {
         </p>
       </div>
       <div className="flex items-center gap-2">
-        <SyncStatus synced={synced} />
-        <button
-          onClick={() => onSettingsClick?.()}
-          aria-label="Settings"
-          className="w-9 h-9 flex items-center justify-center rounded-md border border-border hover:bg-surface-2 text-text-tertiary"
-        >
-          <SettingsIcon size={18} />
-        </button>
+        <SyncStatus />
       </div>
     </header>
   );
