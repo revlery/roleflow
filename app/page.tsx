@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Job, JobStatus, STATUSES } from "./types";
 import JobCard from "./components/JobCard";
 import AddJobModal from "./components/AddJobModal";
+import Header from "./components/Header";
 import SyncStatus from "./components/SyncStatus";
 
 const STORAGE_KEY = "roleflow.jobs";
@@ -54,15 +55,7 @@ export default function Home() {
 
   return (
     <main className="flex-1 bg-surface-page">
-      <header className="px-8 pt-8 pb-4 flex justify-between items-center">
-        <div>
-          <h1 className="text-xl font-semibold text-text-primary">Roleflow</h1>
-          <p className="text-sm text-text-tertiary">
-            {jobs.length} job{jobs.length === 1 ? "" : "s"} tracked
-          </p>
-        </div>
-        <SyncStatus synced={synced} />
-      </header>
+      <Header jobs={jobs} synced={synced} onSettingsClick={() => {}} />
 
       <div className="flex gap-4 px-8 pb-8 items-start">
         {STATUSES.map((status) => {

@@ -1,3 +1,5 @@
+"use client";
+
 interface SyncStatusProps {
 	synced: boolean;
 }
