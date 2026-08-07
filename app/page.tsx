@@ -54,7 +54,7 @@ export default function Home() {
 
   return (
     <main className="flex-1 bg-surface-page">
-      <header className="px-8 pt-8 pb-4 flex justify-between items-start">
+      <header className="px-8 pt-8 pb-4 flex justify-between items-center">
         <div>
           <h1 className="text-xl font-semibold text-text-primary">Roleflow</h1>
           <p className="text-sm text-text-tertiary">
