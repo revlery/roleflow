@@ -3,7 +3,15 @@
 import SyncStatus from "./SyncStatus";
 import SettingsIcon from "./icons/SettingsIcon";
 
-export default function Header({ jobs, synced, onSettingsClick }) {
+import { Job } from "../types";
+
+interface HeaderProps {
+  jobs: Job[];
+  synced: boolean;
+  onSettingsClick?: () => void;
+}
+
+export default function Header({ jobs, synced, onSettingsClick }: HeaderProps) {
   return (
     <header className="px-8 pt-8 pb-4 flex justify-between items-center">
       <div>
